@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+<body>
+<form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Staff first_name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="first_name" id="id_name" required maxlength="20" value="{{ staf.first_name }}"/>
+    </div>
+  </div>
+
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">staff last_name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="last_name" id="last_name" required maxlength="254" value="{{ staf.last_name }}" />
+    </div>
+  </div>
+
+     <div class="form-group row">
+    <label class="col-sm-2 col-form-label">staff salary:</label>
+    <div class="col-sm-4">
+        <input type="text" name="salary" id="salary" required maxlength="254" value="{{ staf.salary }}" />
+    </div>
+  </div>
+
+       <div class="form-group row">
+    <label class="col-sm-2 col-form-label">staff mobile:</label>
+    <div class="col-sm-4">
+        <input type="text" name="mobile" id="mobile" required maxlength="254" value="{{ staf.mobile }}" />
+    </div>
+  </div>
+
+        <div class="form-group row">
+    <label class="col-sm-2 col-form-label">staff state:</label>
+    <div class="col-sm-4">
+        <input type="text" name="state" id="state" required maxlength="254" value="{{ staf.state }}" />
+    </div>
+  </div>
+
+        <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Staff country:</label>
+    <div class="col-sm-4">
+        <input type="text" name="country" id="country" required maxlength="254" value="{{ staf.country }}" />
+    </div>
+  </div>
+
+        <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Staff department:</label>
+    <div class="col-sm-4">
+        <input type="text" name="department" id="department" required maxlength="254" value="{{ staf.department }}" />
+    </div>
+  </div>
+
+        <div class="form-group row">
+    <label class="col-sm-2 col-form-label"> Staff work_discription:</label>
+    <div class="col-sm-4">
+        <input type="text" name="work_discription" id="work_discription" required maxlength="254" value="{{ staf.work_discription }}" />
+    </div>
+  </div>
+
+
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+    </div>
+</form>
+</body>
+</html>

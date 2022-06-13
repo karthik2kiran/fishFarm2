@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+<body>
+<form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Fish Image:</label>
+    <div class="col-sm-4">
+        {% if fish.image %}
+        <img src="{{fish.image.url}}" name="image" id="id_image" />
+        {% endif %}
+        <label for="" class="form-label">Image</label>
+        <input type="file" required name="image" class="form-control">
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="name" id="name" required maxlength="254" value="{{ fish.name }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Fish Type:</label>
+    <div class="col-sm-4">
+        <input type="text" name="type" id="id_type" required maxlength="15" value="{{ fish.type }}" />
+    </div>
+  </div>
+     <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Total:</label>
+    <div class="col-sm-4">
+        <input type="text" name="total" id="id_total" required maxlength="15" value="{{ fish.total }}" />
+    </div>
+  </div>
+
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+    </div>
+</form>
+</body>
+</html>

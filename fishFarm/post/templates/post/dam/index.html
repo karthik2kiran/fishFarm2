@@ -1,0 +1,45 @@
+{% block title %}
+Dams Information
+{% endblock title %}
+
+{% block contents %}
+
+  <section class="container mt-2">
+    <div class="row ml-2 mr-2">
+
+      {%  if  dams %}
+        {% for dam in dams  %}
+             <div class="col-lg-6">
+                <div class="card">
+                  <img class="card-img-top" src="{{dam.image.url}}" alt="Card image cap">
+                  <div class="card-body">
+                    <h4 class="card-title mb-3">{{dam.name}} <span class="text-right"> &emsp; &emsp; &emsp; &emsp; &emsp;Total Fishes: &nbsp; {{dam.no_fishes}} </span> </h4>
+                    <p class="card-text"></p>
+                    <p class="lead text-justify">{{dam.about}}</p>
+                  </div>
+
+                  <div class="card-footer rounded-0 bg-dark">
+                    <span class="float-left">
+                      <a href=" {% url 'd_show' %} " class="btn rounded btn-block  btn-danger"><i class="fas fa-plus"></i> New Dam</a>
+                    </span>
+
+                     <span class="float-right">
+                      <a href="{% url 'd_edit' pk=dl.id %}"  class="btn  btn-secondary"> <i class="fas fa-edit"></i> &emsp; Update </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+     {% endfor %}
+     {% else %}
+     <div class="text-center">
+       <p class="display-info">No Dam Information</p>
+       <a href="{% url 'd_view' %}" class="btn text-center btn-outline-info">
+         Create a new Dam
+       </a>
+     </div>
+     {%endif%}
+    </div>
+  </section>
+
+{% endblock contents  %}

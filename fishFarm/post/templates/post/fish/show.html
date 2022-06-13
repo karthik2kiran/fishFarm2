@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fish Records</title>
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Fish Image </th>
+        <th> Fish Name   </th>
+        <th> Type </th>
+        <th> Total </th>
+
+    </tr>
+    </thead>
+    <tbody>
+{% for fish in fishes %}
+    <tr>
+
+        {% if fish.image %}
+        <td>
+            <img src="{{ fish.image.url }}" alt="" class="fish" height="30%" width="40%">
+        </td>
+        {% endif %}
+        <td>{{ fish.name }}</td>
+        <td>{{ fish.type }}</td>
+        <td>{{ fish.total }}</td>
+
+        <td>
+            <a href="/fishedit/{{ fish.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+            <a href="/fishdelete/{{ fish.id }}">Delete</a>
+        </td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<center><a href="/fishview" class="btn btn-primary">Add New Fish</a></center>
+</body>
+</html>

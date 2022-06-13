@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Records</title>
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Staff first_name </th>
+        <th> staff last_name </th>
+        <th>staff salary </th>
+        <th> staff mobile </th>
+        <th>staff state </th>
+        <th> Staff country </th>
+        <th>Staff department </th>
+        <th> Staff work_discription </th>
+
+
+
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for staf in staffs %}
+    <tr>
+        <td>{{ staf.first_name }}</td>
+        <td>{{ staf.last_name }}</td>
+        <td>{{ staf.salary }}</td>
+        <td>{{ staf.mobile }}</td>
+        <td>{{ staf.state }}</td>
+        <td>{{ staf.country }}</td>
+        <td>{{ staf.department }}</td>
+        <td>{{ staf.work_discription }}</td>
+
+        <td>
+            <a href="/staffedit/{{ staf.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+            <a href="/staffdelete/{{ staf.id }}">Delete</a>
+        </td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<center><a href="/staffview" class="btn btn-primary">Add New Staff</a></center>
+</body>
+</html>

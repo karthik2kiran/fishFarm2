@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+<style>
+    h1 {
+    color :red;
+    }
+</style>
+</head>
+
+<body>
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="fw-bold">Add Staff</h2>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="" class="form-label">first_name</label>
+                                <input type="text" Required name="first_name" class="form-control">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="" class="form-label">last_name</label>
+                                <input type="text" Required name="last_name" class="form-control">
+                            </div>
+
+                             <div class="mb-3">
+                                <label for="" class="form-label">salary</label>
+                                <input type="text" Required name="salary" class="form-control">
+                            </div>
+
+                             <div class="mb-3">
+                                <label for="" class="form-label">mobile</label>
+                                <input type="text" Required name="mobile" class="form-control">
+                            </div>
+
+                             <div class="mb-3">
+                                <label for="" class="form-label">state</label>
+                                <input type="text" Required name="state" class="form-control">
+                            </div>
+
+                             <div class="mb-3">
+                                <label for="" class="form-label">country</label>
+                                <input type="text" Required name="country" class="form-control">
+                            </div>
+
+                             <div class="mb-3">
+                                <label for="" class="form-label">department</label>
+                                <input type="text" Required name="department" class="form-control">
+                            </div>
+
+                             <div class="mb-3">
+                                <label for="" class="form-label">work_discription</label>
+                                <input type="text" Required name="work_discription" class="form-control">
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

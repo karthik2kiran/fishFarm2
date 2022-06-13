@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dam Records</title>
+</head>
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Dam Name </th>
+        <th> Dam Image   </th>
+        <th> No of Fishes </th>
+        <th> Fish Categories </th>
+        <th> Location </th>
+        <th> About </th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for dam in dams %}
+    <tr>
+        <td>{{ dam.name }}</td>
+        {% if dam.image %}
+        <td>
+            <img src="{{ dam.image.url }}" alt="" class="dam-size" height="30%" width="40%">
+        </td>
+        {% endif %}
+        <td>{{ dam.no_fishes }}</td>
+        <td>{{ dam.category }}</td>
+        <td>{{ dam.location }}</td>
+        <td>{{ dam.about }}</td>
+        <td>
+            <a href="/dedit/{{ dam.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+            <a href="/ddelete/{{ dam.id }}">Delete</a>
+        </td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+<center><a href="/dview" class="btn btn-primary">Add New Dam</a></center>
+</body>
+</html>

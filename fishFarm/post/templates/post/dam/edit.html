@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+<body>
+<form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Dam Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="name" id="id_name" required maxlength="20" value="{{ dam.name }}"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Dam Image:</label>
+    <div class="col-sm-4">
+        {% if dam.image %}
+        <img src="{{dam.image.url}}" name="image" id="id_image" />
+        {% endif %}
+        <label for="" class="form-label">Image</label>
+        <input type="file" required name="image" class="form-control">
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">No Of Fishes:</label>
+    <div class="col-sm-4">
+        <input type="text" name="no_fishes" id="id_no_fishes" required maxlength="254" value="{{ dam.no_fishes }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Fish Categories:</label>
+    <div class="col-sm-4">
+        <input type="text" name="category" id="id_category" required maxlength="15" value="{{ dam.category }}" />
+    </div>
+  </div>
+     <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Location:</label>
+    <div class="col-sm-4">
+        <input type="text" name="location" id="id_location" required maxlength="15" value="{{ dam.location }}" />
+    </div>
+  </div>
+      <div class="form-group row">
+    <label class="col-sm-2 col-form-label">About:</label>
+    <div class="col-sm-4">
+        <input type="text" name="about" id="id_about" required maxlength="15" value="{{ dam.about }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+    </div>
+</form>
+</body>
+</html>
